@@ -9,6 +9,6 @@ public static class SumOfMultiples
         return Enumerable
             .Range(0, max)
             .Aggregate(0, (sum, accumulator) =>
-                multiples.Any(m => m != 0 && accumulator % m == 0) ? sum + accumulator : sum);exer
+                multiples.Any(m => m != 0 && accumulator % m == 0) ? sum + accumulator : sum);
     }
 }

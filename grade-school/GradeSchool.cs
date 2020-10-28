@@ -10,12 +10,10 @@ public class GradeSchool
         GradeSchoolDictionary.Add(student, grade);
     }
 
-    public IEnumerable<string> Roster()
-    {
-        return GradeSchoolDictionary.OrderBy(name => name.Value)
-            .ThenBy(name => name.Key)
-            .Select(name => name.Key);
-    }
+    public IEnumerable<string> Roster() => GradeSchoolDictionary.OrderBy(name => name.Value)
+                                        .ThenBy(name => name.Key)
+                                        .Select(name => name.Key);
+    
 
     public IEnumerable<string> Grade(int grade)
     {

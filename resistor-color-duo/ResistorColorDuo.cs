@@ -1,24 +1,19 @@
 using System;
-using System.Collections.Generic;
+using System.Linq;
 public static class ResistorColorDuo
 {
     public static int Value(string[] colors)
-    {
-        var myList = new List<int>();
-        foreach(var color in colors)
-        {
-            var index = Array.IndexOf(Colors(), color);
-            myList.Add(index);
-        }
-        int combinedvalue = int.Parse(myList[0].ToString() + myList[1].ToString());
-        return combinedvalue;
-    }
-    public static string[] Colors()
     {
         var colorArray = new string[]
         {
             "black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"
         };
-        return colorArray;
+        var result = "";
+        foreach(var color in colors.Take(2))
+        {
+            var index = Array.IndexOf(colorArray, color);
+            result += index;
+        }
+        return Int32.Parse(result);
     }
 }
